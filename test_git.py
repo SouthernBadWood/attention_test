@@ -1,7 +1,7 @@
 import torch
 import math
 import torch.nn as nn
-
+from torchinfo import summary
 #input_shape = batchsize, seq_len, dim
 class model(nn.Module):
     def __init__(self,dim,hiddin_dim,drop_rate=0.1,heads=8):
@@ -25,4 +25,5 @@ if __name__ == "__main__":
     model = model(dim=64,hiddin_dim=128,drop_rate=0.1)
     output = model(x)
     print(output.shape)  # should be (1, 10, 64)
+    summary(model, input_size=(1, 10, 64))
 
