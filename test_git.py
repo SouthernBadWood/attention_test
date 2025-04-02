@@ -3,7 +3,7 @@ import math
 import torch.nn as nn
 from torchinfo import summary
 #input_shape = batchsize, seq_len, dim
-class model(nn.Module):
+class selfattention(nn.Module):
     def __init__(self,dim,hiddin_dim,drop_rate=0.1,heads=8):
         super(model, self).__init__()
         self.hidden_dim = hiddin_dim
